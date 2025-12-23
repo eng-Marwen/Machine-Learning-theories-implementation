@@ -1,0 +1,27 @@
+1️⃣ Linear Regression
+
+Use it when your target (dependent variable) is continuous, i.e., it can take any real number.
+
+Examples:
+
+Predicting house prices.
+
+Predicting temperature.
+
+Predicting student scores.
+
+Model output: A real number (can be negative or positive, decimal allowed).
+
+2️⃣ Logistic Regression (classification)
+
+Use it when your target is categorical, usually binary (0 or 1), but it can also be multi-class with extensions.
+
+Examples:
+
+Predicting if an email is spam (yes/no → 1/0).
+
+Predicting if a patient has a disease (yes/no).
+
+Predicting if a customer will buy a product (yes/no).
+
+Model output: A probability between 0 and 1 (then thresholded to decide class).
