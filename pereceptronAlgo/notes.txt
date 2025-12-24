@@ -1,0 +1,55 @@
+==============================
+Perceptron & Choosing ML Algorithm
+==============================
+
+1️⃣ Perceptron – Brief Summary
+------------------------------
+- Type: Linear classifier (binary classification)
+- Goal: Find a hyperplane that separates two classes.
+- Model:
+  y_hat = 1 if w^T x + b >= 0, else 0
+- Training:
+  Update weights when prediction is wrong:
+    w := w + eta * (y - y_hat) * x
+    b := b + eta * (y - y_hat)
+- Converges only if data is linearly separable.
+
+2️⃣ When to Use Perceptron
+--------------------------
+✅ Use it when:
+1. Binary classification problem
+2. Data is linearly separable (or roughly separable)
+3. Simple and interpretable model is sufficient
+4. Small to medium dataset
+
+❌ Avoid when:
+- Classes overlap heavily (non-linear)
+- Output is continuous (use regression)
+- Complex interactions (use trees, SVM, or neural networks)
+
+3️⃣ How to Check if Data Fits Perceptron
+----------------------------------------
+1. Visual check (if 2D/3D): see if a straight line separates classes
+2. Train a perceptron and check accuracy:
+   - High accuracy (~100%) → good fit
+   - Low accuracy → not suitable, try another algorithm
+3. Theoretical check using linear programming (advanced)
+
+4️⃣ How to Choose an ML Algorithm
+---------------------------------
+1. Identify task type:
+   - Classification → labels are categories
+   - Regression → labels are continuous numbers
+2. Check linearity/separability:
+   - Linearly separable → Perceptron, Logistic Regression, Linear SVM
+   - Non-linear → Decision Trees, Random Forest, Kernel SVM, Neural Networks
+3. Consider data size & feature types:
+   - Few samples → simple models
+   - Many features → regularization or tree-based models
+4. Try multiple models & evaluate using cross-validation
+5. Pick the best model → tune hyperparameters → retrain
+
+5️⃣ Rule of Thumb
+-----------------
+- Perceptron = linear, simple, fast, only for separable data
+- Other algorithms = choose based on task, feature types, data size, and complexity
