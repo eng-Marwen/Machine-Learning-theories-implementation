@@ -16,6 +16,16 @@ data = pd.read_csv(os.path.join(script_dir, "data.csv"))
 #clean data
 sns.heatmap(data.isnull())#Detect Missing Values 
 # plt.show()
+
+# Plot succeed vs study_hours
+plt.figure(figsize=(8, 5))
+plt.scatter(data['study_hours'], data['succeed'], c=data['succeed'], cmap='coolwarm', edgecolors='k')
+plt.xlabel('Study Hours')
+plt.ylabel('Succeed (0=Fail, 1=Success)')
+plt.title('Study Hours vs Success')
+plt.yticks([0, 1], ['Fail', 'Success'])
+plt.show()
+
 y=data['succeed']
 x=data.drop('succeed',axis=1)
 # print(y.head())
