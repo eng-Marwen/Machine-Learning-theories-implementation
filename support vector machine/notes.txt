@@ -1,0 +1,50 @@
+"""
+=============================================================================
+SUPPORT VECTOR MACHINE (SVM) - Classification Model
+=============================================================================
+
+WHAT IS SVM?
+------------
+SVM is a supervised machine learning algorithm used for classification and 
+regression tasks. It works by finding the optimal hyperplane that best 
+separates different classes in the feature space.
+
+KEY CONCEPTS:
+-------------
+1. HYPERPLANE: A decision boundary that separates different classes
+   - In 2D: it's a line
+   - In 3D: it's a plane
+   - In higher dimensions: it's a hyperplane
+
+2. SUPPORT VECTORS: Data points closest to the hyperplane
+   - These are the critical elements that define the decision boundary
+   - The margin is calculated based on these points
+
+3. MARGIN: Distance between the hyperplane and the nearest data points
+   - SVM tries to MAXIMIZE this margin
+   - Larger margin = better generalization
+
+4. KERNEL TRICK: Transform data to higher dimensions when not linearly separable
+   - Linear: No transformation, for linearly separable data
+   - RBF (Radial Basis Function): Most common, handles non-linear data
+   - Polynomial: For polynomial decision boundaries
+   - Sigmoid: Similar to neural networks
+
+WHEN TO USE SVM?
+----------------
+✓ Binary or multi-class classification
+✓ High-dimensional data (text classification, image recognition)
+✓ When you need clear margin of separation
+✓ Small to medium sized datasets
+✗ Very large datasets (slow training)
+✗ Noisy data with overlapping classes
+
+HYPERPARAMETERS:
+----------------
+- C (Regularization): Controls trade-off between smooth decision boundary and 
+  classifying training points correctly. Higher C = less regularization
+- Gamma: Defines influence of single training example. High gamma = closer points
+  have more influence (can lead to overfitting)
+- Kernel: Type of transformation to apply
+=============================================================================
+"""
