@@ -25,3 +25,44 @@ Predicting if a patient has a disease (yes/no).
 Predicting if a customer will buy a product (yes/no).
 
 Model output: A probability between 0 and 1 (then thresholded to decide class).
+
+How it works
+
+Input: Text data (e.g., messages)
+
+Feature extraction: Convert text into numbers (usually TF-IDF vectors)
+
+Each word becomes a column
+
+Each message becomes a numeric vector
+
+Model prediction: Logistic regression computes a weighted sum of the input features:
+
+z = w1*x1 + w2*x2 + ... + wn*xn + b
+
+
+xi → TF-IDF value for word i
+
+wi → weight learned for word i
+
+b → bias
+
+Activation function: Apply sigmoid to get probability between 0 and 1:
+
+P(y=1|x) = 1 / (1 + e^(-z))
+
+
+2️⃣ Learning process
+
+The model starts with random weights
+
+It predicts probabilities for all training examples
+
+Error is calculated using log loss:
+
+Loss = - (y*log(p) + (1-y)*log(1-p))
+
+
+Weights are updated to minimize loss (gradient descent)
+
+Iterates until convergence (loss stops decreasing)
