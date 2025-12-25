@@ -1,0 +1,141 @@
+For binary classification:
+
+	               | Predicted Spam	     |   Predicted Not Spam
+-------------------|---------------------|------------------------
+Actual Spam	       |TP (True Positive)	 |  FN (False Negative)
+-------------------|---------------------|-------------------------
+Actual Not Spam	   |FP (False Positive)	 |  TN (True Negative)
+-------------------------------------------------------------------
+
+TP: spam correctly detected
+
+TN: normal message correctly allowed
+
+FP: normal message marked as spam ❌
+
+FN: spam allowed through ❌
+
+All metrics come from this table.
+
+2️⃣ Accuracy
+
+“How many predictions were correct overall?”
+
+Formula:
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+
+Rule:
+
+✅ Good when classes are balanced
+
+❌ Misleading when data is imbalanced
+
+📌 In spam detection → don’t trust accuracy alone
+
+3️⃣ Precision
+
+“When the model predicts spam, how often is it right?”
+
+Formula:
+Precision = TP / (TP + FP)
+
+Rule:
+
+High precision → few false alarms
+
+Important when FP is costly
+
+📌 Example:
+
+Email marked spam but is important → BAD
+4️⃣ Recall (Sensitivity)
+
+“How much spam did the model catch?”
+
+Formula:
+Recall = TP / (TP + FN)
+
+Rule:
+
+High recall → few missed spam
+
+Important when FN is costly
+
+📌 Example:
+
+Spam reaches inbox → BAD
+
+6️⃣ F1-Score
+
+Balance between precision and recall
+
+Formula:
+F1 = 2 * (Precision * Recall) / (Precision + Recall)
+
+Rule:
+
+Best single metric for imbalanced data
+
+Penalizes extreme values
+
+📌 If one is low → F1 is low
+
+7️⃣ Support
+
+Number of real samples per class
+
+Rule:
+
+Shows class imbalance
+
+Low support → metrics are less reliable
+
+📌 Always check support first
+
+8️⃣ Macro Average
+
+Treats all classes equally
+
+Formula:
+Macro = average(metric for each class)
+
+Rule:
+
+Best to judge fairness across classes
+
+Not affected by imbalance
+
+📌 Use macro F1 when classes are imbalanced
+
+8️⃣ Macro Average
+
+Treats all classes equally
+Macro = average(metric for each class)
+Rule:
+Best to judge fairness across classes
+
+Not affected by imbalance
+
+📌 Use macro F1 when classes are imbalanced
+
+9️⃣ Weighted Average
+Weights metrics by number of samples
+
+Rule:
+Dominated by majority class
+
+Can hide poor minority performance
+
+📌 Looks good, but can be misleading
+
+1️⃣2️⃣ Interpreting YOUR results (example)
+
+From your model:
+
+Accuracy ≈ 96% → looks good
+
+Spam Recall ≈ 95% → excellent
+
+Not-spam Precision ≈ 68% → warning ⚠️
+
+Macro F1 ≈ 0.89 → honest score
