@@ -1,0 +1,54 @@
+TF-IDF FOR TEXT FILES
+
+Each text file is considered one document.
+TF-IDF is used to measure the importance of a word inside a text file compared to all other text files.
+
+Term Frequency (TF)
+TF measures how often a word appears in a single text file.
+
+Formula:
+TF(w, d) = (Number of times word w appears in document d) / (Total number of words in document d)
+
+A word that appears many times in the text file has a higher TF value.
+
+Inverse Document Frequency (IDF)
+IDF measures how rare a word is across all text files.
+
+Formula:
+IDF(w) = log(N / DF(w))
+
+Where:
+N = total number of text files
+DF(w) = number of text files containing the word w
+
+Common words have low IDF, while rare words have high IDF.
+
+TF-IDF
+TF-IDF is calculated by multiplying TF and IDF.
+
+Formula:
+TF-IDF(w, d) = TF(w, d) * IDF(w)
+
+A word gets a high TF-IDF score if it appears frequently in one text file and rarely in other text files.
+
+Conclusion
+TF-IDF converts text files into numerical values and helps identify important words.
+It is commonly used in text classification, document similarity, and search engines.
+
+IX =
+[
+ [0.6, 0.5, 0.6, 0,   0,   ...],   # "win money now" → spam
+ [0,   0.5, 0,   0.6, 0.6, ...],   # "cheap money offer" → spam
+ [0,   0,   0,   0,   0,   ...],   # "hello how are you" → not spam
+]
+
+For one message:
+
+score = (TF-IDF × weight) + bias
+
+
+Example:
+
+"win money now"
+score = (0.6×2.5) + (0.5×2.0) + (0.6×2.1)
+score = high → spam
